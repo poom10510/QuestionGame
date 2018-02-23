@@ -1,1 +1,43 @@
-<h1>Hello world!!!</h1>
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="gamefunction.js"></script>
+    <script src="gamequestions.js"></script>
+    <link href="gamestyle.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <p id="scorenow">Score: 0</p>
+    <p id="timer">10</p>
+    <button type="button" onclick="myFunction()">start</button>
+    <button type="button" onclick="getquestion()">load</button>
+    <button onclick="">ggg</button>
+
+    <div id="quustionboard">
+        <h3 id="question">g1</h3>
+        <ul>
+            <li id="c1">1</li>
+            <li id="c2">2</li>
+            <li id="c3">3</li>
+            <li id="c4">4</li>
+        </ul>
+    </div>
+    <script>
+        $.getJSON('./Questions.json', (data) => {
+                game(data)
+
+            })
+            // $(document).ready(function() {
+            //     $("li").click(function() {
+            //         //$("p#g").toggle();
+            //         console.log($(this).text());
+            //     });
+            // });
+    </script>
+</body>
+
+</html>

@@ -15,16 +15,17 @@
     <p id="timer">10</p>
     <button type="button" onclick="myFunction()">start</button>
     <button type="button" onclick="getquestion()">load</button>
-    <button onclick="">ggg</button>
 
-    <div id="quustionboard">
-        <h3 id="question">g1</h3>
-        <ul>
-            <li id="c1">1</li>
-            <li id="c2">2</li>
-            <li id="c3">3</li>
-            <li id="c4">4</li>
-        </ul>
+    <div id="questionboard">
+        <div>
+            <p id="question">g1</p>
+        </div>
+        <div class="center">
+            <p id="c1" onclick="selectAnswer(1)">1</p>
+            <p id="c2" onclick="selectAnswer(2)">2</p>
+            <p id="c3" onclick="selectAnswer(3)">3</p>
+            <p id="c4" onclick="selectAnswer(4)">4</p>
+        </div>
     </div>
     <script>
         $.getJSON('./Questions.json', (data) => {

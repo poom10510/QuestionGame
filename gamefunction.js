@@ -37,7 +37,7 @@ function myFunction() {
 
 function getquestion() {
     qindex = changeQuestion();
-    score++;
+    //score++;
     updateScore()
 }
 
@@ -67,4 +67,18 @@ function setQuestion(item) {
     document.getElementById("c3").textContent = item.choice[2];
     document.getElementById("c4").textContent = item.choice[3];
 
+}
+
+function selectAnswer(num) {
+    if (timestart) {
+        var key = qcontainer[qindex].answer;
+        if (num == key) {
+            console.log(num + " correct!");
+            score++;
+        } else {
+            console.log(num + " incorrect!");
+        }
+        qindex = changeQuestion();
+        updateScore()
+    }
 }

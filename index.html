@@ -6,38 +6,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="gamefunction.js"></script>
-    <script src="gamequestions.js"></script>
     <link href="gamestyle.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-    <p id="scorenow">Score: 0</p>
-    <p id="timer">10</p>
-    <button type="button" onclick="myFunction()">start</button>
-    <button type="button" onclick="getquestion()">load</button>
+    <div class="questionnavbar">
+        <ul>
+            <li id="scoreshow">Score: 0</li>
+            <li id="questionshow">Question: 1 </li>
+            <li id="timer" class="rightnav">Time: 10 </li>
+        </ul>
+    </div>
 
+    <button type="button" onclick="changeStatetime()">start</button>
+    <button type="button" onclick="getquestion()">load</button>
+    <div class="center">
+
+
+    </div>
     <div id="questionboard">
         <div>
             <p id="question">g1</p>
         </div>
-        <div class="center">
+        <div class="center answerboard">
             <p id="c1" onclick="selectAnswer(1)">1</p>
             <p id="c2" onclick="selectAnswer(2)">2</p>
             <p id="c3" onclick="selectAnswer(3)">3</p>
             <p id="c4" onclick="selectAnswer(4)">4</p>
         </div>
     </div>
+    <div id="manustartboard">
+        <div>
+            <p id="startselect">Start 5 Questions</p>
+        </div>
+        <div class="center answerboard">
+            <p id="s1" onclick="setQuestionvalue(5)">5</p>
+            <p id="s2" onclick="setQuestionvalue(10)">10</p>
+            <p id="s3" onclick="setQuestionvalue(15)">15</p>
+            <p id="s4">Go!!</p>
+        </div>
+    </div>
+    <div id="summaryboard">
+        <p>Summary</p>
+        <div class="center answerboard">
+            <p id="reset">Restart</p>
+            <p id="sum">Back to manu</p>
+        </div>
+    </div>
+
     <script>
         $.getJSON('./Questions.json', (data) => {
-                game(data)
+            game(data)
+            $("#questionboard").hide();
+            $("#summaryboard").hide();
 
-            })
-            // $(document).ready(function() {
-            //     $("li").click(function() {
-            //         //$("p#g").toggle();
-            //         console.log($(this).text());
-            //     });
-            // });
+        });
+        $(document).ready(function() {
+            $("#s4").click(function() {
+                console.log("start");
+                // $("questionboard").show();
+                $("#questionboard").toggle();
+                $("#manustartboard").toggle();
+                startGame();
+            });
+            $("#sum").click(function() {
+                console.log("reset");
+                // $("questionboard").show();
+                $("#summaryboard").toggle();
+                $("#manustartboard").toggle();
+                resetGame();
+            });
+            $("#reset").click(function() {
+                console.log("start");
+                // $("questionboard").show();
+                $("#questionboard").toggle();
+                $("#summaryboard").toggle();
+                startGame();
+            });
+        });
+        // $(document).ready(function() {
+        //     $("li").click(function() {
+        //         //$("p#g").toggle();
+        //         console.log($(this).text());
+        //     });
+        // });
     </script>
 </body>
 

@@ -2,7 +2,7 @@
 // live-server
 
 var timestart = false;
-var timemax = 10;
+var timemax = 100;
 var timeleft = timemax;
 var qcontainer = [];
 // Update the count down every 1 second
@@ -10,13 +10,14 @@ var counttime = setInterval(function() {
     if (timeleft <= 0) {
         //clearInterval(x);
         changeQuestion();
+        updateQuestion();
         //document.getElementById("demo").innerHTML = "EXPIRED";
     }
     if (timestart) {
-        document.getElementById("timer").innerHTML = "Time: " + timeleft;
+        document.getElementById("timer").innerHTML = "Time: " + (timeleft / 10).toFixed(1);
         timeleft--;
     }
-}, 1000);
+}, 100); //second 1000 milli 100
 
 var qindex = -1;
 var scorenow = 0;
@@ -49,6 +50,27 @@ function summaryGame() {
     $("#questionboard").hide();
     $("#summaryboard").toggle();
     console.log(answerrecord);
+    var timetotal = 0,
+        correctanwer = 0,
+        incorrectanswer = 0;
+
+    answerrecord.forEach(item => {
+        //{ "answer": num, "key": key, "time": 10 - timeleft }
+        timetotal += item.time / 10;
+        if (item.answer == item.key) {
+            correctanwer++;
+        } else {
+            incorrectanswer++;
+        }
+    });
+    var avt = (timetotal / questionlimit).toFixed(2);
+    console.log("tt" + avt);
+
+    $("#sum1").text("Totalscore: " + scorenow);
+    $("#sum2").text("Correct: " + correctanwer);
+    $("#sum3").text("Incorrect: " + incorrectanswer);
+    $("#sum4").text("Totaltime: " + timetotal.toFixed(2) + " Second");
+    $("#sum5").text("Averagetime: " + (timetotal / questionlimit).toFixed(2) + " Second/Question");
 
 }
 
@@ -113,7 +135,7 @@ function setQuestionvalue(num) {
 function selectAnswer(num) {
     if (timestart) {
         var key = qcontainer[qindex].answer;
-        answerrecord.push({ "answer": num, "key": key, "time": 10 - timeleft });
+        answerrecord.push({ "answer": num, "key": key, "time": timemax - timeleft });
         if (num == key) {
             console.log(num + " correct!");
             scorenow++;

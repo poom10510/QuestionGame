@@ -5,7 +5,7 @@
     <title>game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="gamefunction.js"></script>
+    <script src="./src/gamefunction.js"></script>
     <link href="gamestyle.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -49,13 +49,20 @@
     <div id="summaryboard">
         <p>Summary</p>
         <div class="center answerboard">
+            <ul>
+                <li id="sum1">Totalscore: 0</li>
+                <li id="sum2">Correct: 0</li>
+                <li id="sum3">Incorrect: 0</li>
+                <li id="sum4">Totaltime: 0</li>
+                <li id="sum5">Averagetime: 0</li>
+            </ul>
             <p id="reset">Restart</p>
             <p id="sum">Back to manu</p>
         </div>
     </div>
 
     <script>
-        $.getJSON('./Questions.json', (data) => {
+        $.getJSON('./database/Questions.json', (data) => {
             game(data)
             $("#questionboard").hide();
             $("#summaryboard").hide();

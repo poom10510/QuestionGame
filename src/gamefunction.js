@@ -20,6 +20,7 @@ var counttime = setInterval(function() {
 }, 100); //second 1000 milli 100
 
 var qindex = -1;
+var qused = [];
 var scorenow = 0;
 var questionnow = 1;
 var questionlimit = 5;
@@ -41,6 +42,7 @@ function resetGame() {
     questionnow = 1;
     timeleft = timemax;
     answerrecord = [];
+    qused = [];
     updateScore();
     document.getElementById("questionshow").textContent = "Question: " + questionnow;
 
@@ -81,7 +83,7 @@ function changeStatetime() {
 }
 
 function getquestion() {
-    qindex = changeQuestion();
+    changeQuestion();
     //scorenow++;
     updateScore()
 }
@@ -89,7 +91,7 @@ function getquestion() {
 
 function changeQuestion() {
     var x = Math.floor((Math.random() * qcontainer.length));
-    while (qindex == x) {
+    while (qused[x]) {
         x = Math.floor((Math.random() * qcontainer.length));
     }
     var q = qcontainer[x].question;
@@ -98,6 +100,7 @@ function changeQuestion() {
     setQuestion(qcontainer[x]);
     timeleft = timemax;
     qindex = x;
+    qused[x] = true;
 
 }
 

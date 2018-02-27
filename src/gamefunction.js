@@ -72,7 +72,7 @@ function summaryGame() {
     $("#sum2").text("Correct: " + correctanwer);
     $("#sum3").text("Incorrect: " + incorrectanswer);
     $("#sum4").text("Totaltime: " + timetotal.toFixed(2) + " Second");
-    $("#sum5").text("Averagetime: " + (timetotal / questionlimit).toFixed(2) + " Second/Question");
+    $("#sum5").text("Averagetime: " + (timetotal / questionlimit).toFixed(2) + " Second / Question");
 
 }
 

@@ -1,5 +1,6 @@
 body {
     background-color: whitesmoke;
+    min-width: 500px;
 }
 
 p {
@@ -57,6 +58,7 @@ p {
     /* background-color: DodgerBlue; */
     height: 300px;
     align-items: flex-end;
+    flex-flow: row wrap;
 }
 
 .battlewall .flex-container>div {
@@ -66,6 +68,7 @@ p {
     font-size: 30px;
     height: 100px;
     width: 50px;
+    margin: 20px;
 }
 
 .flex-container img {
@@ -110,4 +113,88 @@ p {
 
 .summarylist li {
     font-size: 30px;
+}
+
+div.moverl {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation-name: mover2;
+    animation-duration: 2s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+}
+
+div.testanime {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes mover1 {
+    0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+    25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+    }
+    50% {
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+    }
+    75% {
+        background-color: green;
+        left: 0px;
+        top: 200px;
+    }
+    100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+@keyframes mover2 {
+    0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+    50% {
+        background-color: yellow;
+        left: 100px;
+        top: 0px;
+    }
+    100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+@keyframes example {
+    0% {
+        background-color: red;
+    }
+    25% {
+        background-color: yellow;
+    }
+    50% {
+        background-color: blue;
+    }
+    75% {
+        background-color: green;
+    }
+    100% {
+        background-color: red;
+    }
 }

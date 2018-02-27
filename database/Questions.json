@@ -123,6 +123,12 @@
         "question": "What color of Saturday in Thailand ?",
         "choice": ["red", "pink", "purple", "orange"],
         "answer": 3
+    },
+    {
+        "no": 20,
+        "question": "What color of Saturday in Thailand ?",
+        "choice": ["red", "pink", "purple", "orange"],
+        "answer": 3
     }
 
 

@@ -22,39 +22,41 @@
     <button type="button" onclick="changeStatetime()">start</button>
     <button type="button" onclick="getquestion()">load</button>
     <div class="center battlewall">
-        <!-- <img src="http://moziru.com/images/cherry-blossom-clipart-wallpaper-12.jpg" alt="" class="center"> -->
         <div class="flex-container">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-        </div>
-    </div>
-    <div id="questionboard">
-        <div>
-            <p id="question">g1</p>
-        </div>
-        <div class="center answerboard">
-            <p id="c1" onclick="selectAnswer(1)">1</p>
-            <p id="c2" onclick="selectAnswer(2)">2</p>
-            <p id="c3" onclick="selectAnswer(3)">3</p>
-            <p id="c4" onclick="selectAnswer(4)">4</p>
+            <div><img src="https://supatra89.files.wordpress.com/2011/09/106376-attachment.jpg" alt=""></div>
+            <div><img src="https://sites.google.com/site/kokkikjibjib41/_/rsrc/1472865338142/sd-cartoon/106465-attachment.jpg" alt=""></div>
+            <div><img src="https://image.dek-d.com/25/2638126/110044301" alt=""></div>
         </div>
     </div>
     <div id="manustartboard">
-        <div>
+        <div class="orderboard">
             <p id="startselect">Start 5 Questions</p>
         </div>
-        <div class="center answerboard">
+        <div class="center greenboard">
             <p id="s1" onclick="setQuestionvalue(5)">5</p>
             <p id="s2" onclick="setQuestionvalue(10)">10</p>
             <p id="s3" onclick="setQuestionvalue(15)">15</p>
             <p id="s4">Go!!</p>
         </div>
     </div>
+    <div id="questionboard">
+        <div class="orderboard">
+            <p id="question">g1</p>
+        </div>
+        <div class="center blueboard">
+            <p id="c1" onclick="selectAnswer(1)">1</p>
+            <p id="c2" onclick="selectAnswer(2)">2</p>
+            <p id="c3" onclick="selectAnswer(3)">3</p>
+            <p id="c4" onclick="selectAnswer(4)">4</p>
+        </div>
+    </div>
+
     <div id="summaryboard">
-        <p>Summary</p>
-        <div class="center answerboard">
-            <ul>
+        <div class="orderboard">
+            <p>Summary</p>
+        </div>
+        <div class="center redboard">
+            <ul class="summarylist">
                 <li id="sum1">Totalscore: 0</li>
                 <li id="sum2">Correct: 0</li>
                 <li id="sum3">Incorrect: 0</li>
@@ -65,6 +67,8 @@
             <p id="sum">Back to manu</p>
         </div>
     </div>
+
+
 
     <script>
         $.getJSON('./database/Questions.json', (data) => {

@@ -10,7 +10,8 @@ p {
 }
 
 .blueboard {
-    border: 3px solid blue;
+    border: 10px solid blue;
+    border-radius: 25px;
 }
 
 .blueboard p:hover {
@@ -19,7 +20,8 @@ p {
 }
 
 .greenboard {
-    border: 3px solid #73AD21;
+    border: 10px solid #73AD21;
+    border-radius: 25px;
 }
 
 .greenboard p:hover {
@@ -28,7 +30,8 @@ p {
 }
 
 .redboard {
-    border: 3px solid red;
+    border: 10px solid red;
+    border-radius: 25px;
 }
 
 .redboard p:hover {
@@ -51,14 +54,20 @@ p {
 .battlewall {
     background: url(http://moziru.com/images/cherry-blossom-clipart-wallpaper-12.jpg);
     height: 300px;
+    border: 3px solid palevioletred;
+    margin-top: 10px;
 }
 
 .battlewall .flex-container {
     display: flex;
-    /* background-color: DodgerBlue; */
+    /* background: transparent url("./src/road.png") center no-repeat; */
+    background: transparent url(https://wallpaperclicker.com/storage/wallpaper/japan-nature-wallpaper-sakura-wallpapers-p-46641844.jpg) center;
+    background-color: rgb(255, 0, 255);
     height: 300px;
-    align-items: flex-end;
-    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    /* flex-flow: row wrap; */
+    flex-direction: column;
 }
 
 .battlewall .flex-container>div {
@@ -66,9 +75,9 @@ p {
     margin: 10px;
     /* padding: 20px; */
     font-size: 30px;
-    height: 100px;
-    width: 50px;
-    margin: 20px;
+    /* height: 100px; */
+    /* width: 50px; */
+    margin: 10px;
 }
 
 .flex-container img {
@@ -104,7 +113,8 @@ p {
 .orderboard {
     margin: auto;
     width: 60%;
-    border: 3px solid black;
+    border: 10px solid black;
+    border-radius: 25px;
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -120,9 +130,29 @@ div.moverl {
     height: 100px;
     background-color: red;
     position: relative;
-    animation-name: mover2;
-    animation-duration: 2s;
+    animation-name: move3;
+    animation-duration: 4s;
     animation-direction: normal;
+    animation-iteration-count: infinite;
+}
+
+div.moverl2 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation-name: move4;
+    animation-duration: 4s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+}
+
+div.movecenter {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: movect;
+    animation-duration: 4s;
     animation-iteration-count: infinite;
 }
 
@@ -163,7 +193,7 @@ div.testanime {
     }
 }
 
-@keyframes mover2 {
+@keyframes move2 {
     0% {
         background-color: red;
         left: 0px;
@@ -178,6 +208,80 @@ div.testanime {
         background-color: red;
         left: 0px;
         top: 0px;
+    }
+}
+
+@keyframes move3 {
+    0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+    25% {
+        background-color: green;
+        left: 100px;
+        top: 0px;
+    }
+    50% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+    75% {
+        background-color: yellow;
+        left: -100px;
+        top: 0px;
+    }
+    100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+@keyframes move4 {
+    0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+    25% {
+        background-color: green;
+        left: -100px;
+        top: 0px;
+    }
+    50% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+    75% {
+        background-color: yellow;
+        left: 100px;
+        top: 0px;
+    }
+    100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+@keyframes movect {
+    0% {
+        background-color: red;
+    }
+    25% {
+        background-color: green;
+    }
+    50% {
+        background-color: red;
+    }
+    75% {
+        background-color: yellow;
+    }
+    100% {
+        background-color: red;
     }
 }
 

@@ -14,7 +14,8 @@ var counttime = setInterval(function() {
         //document.getElementById("demo").innerHTML = "EXPIRED";
     }
     if (timestart) {
-        document.getElementById("timer").innerHTML = "Time: " + (timeleft / 10).toFixed(1);
+        // document.getElementById("timer").innerHTML = "Time: " + (timeleft / 10).toFixed(1);
+        $("#timer").text("Time: " + (timeleft / 10).toFixed(1));
         timeleft--;
     }
 }, 100); //second 1000 milli 100
@@ -44,13 +45,13 @@ function resetGame() {
     answerrecord = [];
     qused = [];
     updateScore();
-    document.getElementById("questionshow").textContent = "Question: " + questionnow;
+    // document.getElementById("questionshow").textContent = "Question: " + questionnow;
+    $("#questionshow").text("Question: " + questionnow);
 
 }
 
 function summaryGame() {
-    $("#questionboard").hide();
-    $("#summaryboard").toggle();
+    setGamestate(3);
     console.log(answerrecord);
     var timetotal = 0,
         correctanwer = 0,
@@ -105,14 +106,16 @@ function changeQuestion() {
 }
 
 function updateScore() {
-    document.getElementById("scoreshow").textContent = "Score: " + scorenow;
+    //document.getElementById("scoreshow").textContent = "Score: " + scorenow;
+    $("#scoreshow").text("Score: " + scorenow);
 }
 
 function updateQuestion() {
     console.log(questionnow);
     if (questionlimit - questionnow > 0) {
         questionnow++;
-        document.getElementById("questionshow").textContent = "Question: " + questionnow;
+        //document.getElementById("questionshow").textContent = "Question: " + questionnow;
+        $("#questionshow").text("Question: " + questionnow);
     } else {
         changeStatetime();
         summaryGame();
@@ -131,7 +134,8 @@ function setQuestion(item) {
 
 function setQuestionvalue(num) {
     questionlimit = num;
-    document.getElementById("startselect").textContent = "Start " + questionlimit + " Questions";
+    //document.getElementById("startselect").textContent = "Start " + questionlimit + " Questions";
+    $("#startselect").text("Start " + questionlimit + " Questions");
 
 }
 
@@ -149,5 +153,31 @@ function selectAnswer(num) {
         changeQuestion();
         updateScore();
         updateQuestion();
+    }
+}
+
+function setGamestate(num) {
+    switch (num) {
+        case 1:
+            $("#questionboard").hide();
+            $("#summaryboard").hide();
+            $("#battlefield").hide();
+            $("#manustartboard").show();
+            break;
+        case 2:
+            $("#questionboard").show();
+            $("#battlefield").show();
+            $("#manustartboard").hide();
+            $("#summaryboard").hide();
+            break;
+        case 3:
+            $("#questionboard").hide();
+            $("#battlefield").hide();
+            $("#summaryboard").show();
+            $("#manustartboard").hide();
+            break;
+
+        default:
+            break;
     }
 }

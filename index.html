@@ -19,16 +19,19 @@
         </ul>
     </div>
 
-    <button type="button" onclick="changeStatetime()">start</button>
-    <button type="button" onclick="getquestion()">load</button>
+    <!-- <button type="button" onclick="changeStatetime()">start</button>
+    <button type="button" onclick="getquestion()">load</button> -->
 
     <div class="center battlewall">
-        <div class="flex-container">
-            <div><img src="https://supatra89.files.wordpress.com/2011/09/106376-attachment.jpg" alt=""></div>
-            <div><img src="https://sites.google.com/site/kokkikjibjib41/_/rsrc/1472865338142/sd-cartoon/106465-attachment.jpg" alt=""></div>
-            <div><img src="https://image.dek-d.com/25/2638126/110044301" alt=""></div>
-            <div class="testanime" style="align-self: flex-start"></div>
+        <div id="battlefield" class="flex-container">
+
+            <!-- <div><img src="https://sites.google.com/site/kokkikjibjib41/_/rsrc/1472865338142/sd-cartoon/106465-attachment.jpg" alt=""></div> -->
+            <!-- <div class="testanime" style="align-self: flex-start"></div> -->
             <div class="moverl"></div>
+            <div class="movecenter"></div>
+            <div class="moverl2"></div>
+            <!-- <div class="testanime" style="align-self: flex-start"></div> -->
+            <!-- <div><img src="https://supatra89.files.wordpress.com/2011/09/106376-attachment.jpg" alt=""></div> -->
         </div>
     </div>
     <div id="manustartboard">
@@ -71,36 +74,29 @@
         </div>
     </div>
 
-
-    <div class="testanime"></div>
-    <div class="moverl"></div>
     <script>
         $.getJSON('./database/Questions.json', (data) => {
             game(data)
-            $("#questionboard").hide();
-            $("#summaryboard").hide();
+            setGamestate(1);
 
         });
         $(document).ready(function() {
             $("#s4").click(function() {
                 console.log("start");
                 // $("questionboard").show();
-                $("#questionboard").toggle();
-                $("#manustartboard").toggle();
+                setGamestate(2);
                 startGame();
             });
             $("#sum").click(function() {
                 console.log("reset");
                 // $("questionboard").show();
-                $("#summaryboard").toggle();
-                $("#manustartboard").toggle();
+                setGamestate(1);
                 resetGame();
             });
             $("#reset").click(function() {
-                console.log("start");
+                console.log("restart");
                 // $("questionboard").show();
-                $("#questionboard").toggle();
-                $("#summaryboard").toggle();
+                setGamestate(2);
                 startGame();
             });
         });

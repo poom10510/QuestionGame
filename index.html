@@ -48,12 +48,17 @@
     <div id="questionboard">
         <div class="orderboard">
             <p id="question">g1</p>
+            <img id="questionpic" src="" alt="">
         </div>
         <div class="center blueboard">
-            <p id="c1" onclick="selectAnswer(1)">1</p>
-            <p id="c2" onclick="selectAnswer(2)">2</p>
-            <p id="c3" onclick="selectAnswer(3)">3</p>
-            <p id="c4" onclick="selectAnswer(4)">4</p>
+            <div onclick="selectAnswer(1)">
+                <p id="c1">1</p><img id="pc1" src="" alt=""></div>
+            <div onclick="selectAnswer(2)">
+                <p id="c2">2</p><img id="pc2" src="" alt=""></div>
+            <div onclick="selectAnswer(3)">
+                <p id="c3">3</p><img id="pc3" src="" alt=""></div>
+            <div onclick="selectAnswer(4)">
+                <p id="c4">4</p><img id="pc4" src="" alt=""></div>
         </div>
     </div>
 
@@ -78,6 +83,7 @@
         $.getJSON('./database/Questions.json', (data) => {
             game(data)
             setGamestate(1);
+            $("#timer").text("Time: " + (timeleft / 10).toFixed(1));
 
         });
         $(document).ready(function() {

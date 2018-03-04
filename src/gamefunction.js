@@ -2,7 +2,7 @@
 // live-server
 
 var timestart = false;
-var timemax = 100;
+var timemax = 600;
 var timeleft = timemax;
 var qcontainer = [];
 // Update the count down every 1 second
@@ -47,6 +47,7 @@ function resetGame() {
     updateScore();
     // document.getElementById("questionshow").textContent = "Question: " + questionnow;
     $("#questionshow").text("Question: " + questionnow);
+    $("#timer").text("Time: " + (timeleft / 10).toFixed(1));
 
 }
 
@@ -130,6 +131,23 @@ function setQuestion(item) {
     document.getElementById("c2").textContent = item.choice[1];
     document.getElementById("c3").textContent = item.choice[2];
     document.getElementById("c4").textContent = item.choice[3];
+
+    $("#questionpic").attr({
+        "src": item.questionpic,
+    });
+    $("#pc1").attr({
+        "src": item.choicepic[0],
+    });
+    $("#pc2").attr({
+        "src": item.choicepic[1],
+    });
+    $("#pc3").attr({
+        "src": item.choicepic[2],
+    });
+    $("#pc4").attr({
+        "src": item.choicepic[3],
+    });
+
 }
 
 function setQuestionvalue(num) {

@@ -26,9 +26,15 @@ var scorenow = 0;
 var questionnow = 1;
 var questionlimit = 5;
 var answerrecord = [];
+var monsters = [];
+
+function setMonsterlist(data) {
+    monsters = data;
+}
 
 function game(data) {
-    console.log('game should be start with ', data)
+    // console.log('game should be start with ', data)
+    console.log("Game loaded");
     qcontainer = data;
     changeQuestion();
 }
@@ -48,12 +54,15 @@ function resetGame() {
     // document.getElementById("questionshow").textContent = "Question: " + questionnow;
     $("#questionshow").text("Question: " + questionnow);
     $("#timer").text("Time: " + (timeleft / 10).toFixed(1));
+    $("#resultpic").attr({
+        "src": ""
+    });
 
 }
 
 function summaryGame() {
     setGamestate(3);
-    console.log(answerrecord);
+    // console.log(answerrecord);
     var timetotal = 0,
         correctanwer = 0,
         incorrectanswer = 0;
@@ -68,7 +77,7 @@ function summaryGame() {
         }
     });
     var avt = (timetotal / questionlimit).toFixed(2);
-    console.log("tt" + avt);
+    // console.log(avt);
 
     $("#sum1").text("Totalscore: " + scorenow);
     $("#sum2").text("Correct: " + correctanwer);
@@ -76,11 +85,21 @@ function summaryGame() {
     $("#sum4").text("Totaltime: " + timetotal.toFixed(2) + " Second");
     $("#sum5").text("Averagetime: " + (timetotal / questionlimit).toFixed(2) + " Second / Question");
 
+    if (correctanwer > incorrectanswer) {
+        $("#resultpic").attr({
+            "src": monsters[5].url
+        });
+    } else {
+        $("#resultpic").attr({
+            "src": monsters[6].url
+        });
+    }
+
+
 }
 
 
 function changeStatetime() {
-    console.log(1);
     timestart = !timestart;
 }
 
@@ -98,11 +117,16 @@ function changeQuestion() {
     }
     var q = qcontainer[x].question;
 
-    console.log(x + " " + q);
+    // console.log(x + " " + q);
     setQuestion(qcontainer[x]);
     timeleft = timemax;
     qindex = x;
     qused[x] = true;
+
+    $("#monspic").attr({
+        "src": monsters[questionnow % 5].url,
+    });
+
 
 }
 
@@ -181,17 +205,20 @@ function setGamestate(num) {
             $("#summaryboard").hide();
             $("#battlefield").hide();
             $("#manustartboard").show();
+            $("#summaryfield").show();
             break;
         case 2:
             $("#questionboard").show();
             $("#battlefield").show();
             $("#manustartboard").hide();
             $("#summaryboard").hide();
+            $("#summaryfield").hide();
             break;
         case 3:
             $("#questionboard").hide();
             $("#battlefield").hide();
             $("#summaryboard").show();
+            $("#summaryfield").show();
             $("#manustartboard").hide();
             break;
 

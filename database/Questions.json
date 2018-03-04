@@ -189,9 +189,135 @@
         "questionpic": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Parallelogram.svg/1200px-Parallelogram.svg.png",
         "choicepic": ["", "", "", ""],
         "answer": 3
+    },
+    {
+        "no": 22,
+        "question": "What is this ?",
+        "choice": ["circle", "triangle", "parallelogram", "rectangle"],
+        "questionpic": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Circle_-_black_simple.svg/1000px-Circle_-_black_simple.svg.png",
+        "choicepic": ["", "", "", ""],
+        "answer": 1
+    },
+    {
+        "no": 23,
+        "question": "What month has 30 day ?",
+        "choice": ["January", "February", "March", "April"],
+        "questionpic": "",
+        "choicepic": ["", "", "", ""],
+        "answer": 4
+    },
+    {
+        "no": 24,
+        "question": "What month has 30 day ?",
+        "choice": ["January", "February", "June", "July"],
+        "questionpic": "",
+        "choicepic": ["", "", "", ""],
+        "answer": 3
+    },
+    {
+        "no": 25,
+        "question": "What month in legend has 30 day ?",
+        "choice": ["January", "August", "October", "July"],
+        "questionpic": "",
+        "choicepic": ["", "", "", ""],
+        "answer": 2
+    },
+    {
+        "no": 26,
+        "question": "What month is zodiac Aries ?",
+        "choice": ["January", "February", "March", "April"],
+        "questionpic": "",
+        "choicepic": ["", "", "", ""],
+        "answer": 4
+    },
+    {
+        "no": 27,
+        "question": "What month is zodiac Pisces ?",
+        "choice": ["January", "February", "March", "April"],
+        "questionpic": "",
+        "choicepic": ["", "", "", ""],
+        "answer": 3
+    },
+    {
+        "no": 28,
+        "question": "What month is zodiac Aquarius ?",
+        "choice": ["January", "February", "March", "April"],
+        "questionpic": "",
+        "choicepic": ["", "", "", ""],
+        "answer": 2
+    },
+    {
+        "no": 29,
+        "question": "What month is zodiac Capricorn ?",
+        "choice": ["January", "February", "March", "April"],
+        "questionpic": "",
+        "choicepic": ["", "", "", ""],
+        "answer": 1
+    },
+    {
+        "no": 30,
+        "question": "What month is zodiac Sagittarius ?",
+        "choice": ["September", "October", "November", "December"],
+        "questionpic": "",
+        "choicepic": ["", "", "", ""],
+        "answer": 4
+    },
+    {
+        "no": 31,
+        "question": "What month is zodiac Scorpio ?",
+        "choice": ["September", "October", "November", "December"],
+        "questionpic": "",
+        "choicepic": ["", "", "", ""],
+        "answer": 3
+    },
+    {
+        "no": 32,
+        "question": "What month is zodiac Libra ?",
+        "choice": ["September", "October", "November", "December"],
+        "questionpic": "",
+        "choicepic": ["", "", "", ""],
+        "answer": 2
+    },
+    {
+        "no": 33,
+        "question": "What month is zodiac Virgo ?",
+        "choice": ["September", "October", "November", "December"],
+        "questionpic": "",
+        "choicepic": ["", "", "", ""],
+        "answer": 1
+    },
+    {
+        "no": 34,
+        "question": "What month is zodiac Leo ?",
+        "choice": ["May", "June", "July", "August"],
+        "questionpic": "",
+        "choicepic": ["", "", "", ""],
+        "answer": 4
+    },
+    {
+        "no": 35,
+        "question": "What month is zodiac Cancer ?",
+        "choice": ["May", "June", "July", "August"],
+        "questionpic": "",
+        "choicepic": ["", "", "", ""],
+        "answer": 3
+    },
+    {
+        "no": 36,
+        "question": "What month is zodiac Gemini ?",
+        "choice": ["May", "June", "July", "August"],
+        "questionpic": "",
+        "choicepic": ["", "", "", ""],
+        "answer": 2
+    },
+    {
+        "no": 37,
+        "question": "What month is zodiac Taurus ?",
+        "choice": ["May", "June", "July", "August"],
+        "questionpic": "",
+        "choicepic": ["", "", "", ""],
+        "answer": 1
     }
-
-
 
 
 ]

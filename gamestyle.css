@@ -67,11 +67,14 @@ p {
     margin-top: 10px;
 }
 
+#battlefield {
+    background: transparent url(https://wallpaperclicker.com/storage/wallpaper/japan-nature-wallpaper-sakura-wallpapers-p-46641844.jpg) center;
+    background-color: rgb(255, 0, 255);
+}
+
 .battlewall .flex-container {
     display: flex;
     /* background: transparent url("./src/road.png") center no-repeat; */
-    background: transparent url(https://wallpaperclicker.com/storage/wallpaper/japan-nature-wallpaper-sakura-wallpapers-p-46641844.jpg) center;
-    background-color: rgb(255, 0, 255);
     height: 300px;
     align-items: center;
     justify-content: center;
@@ -91,6 +94,10 @@ p {
 
 .flex-container img {
     height: 100px;
+}
+
+#summaryfield img {
+    height: 200px;
 }
 
 .questionnavbar ul {

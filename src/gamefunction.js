@@ -58,6 +58,10 @@ function resetGame() {
         "src": ""
     });
 
+    $("#monspic").attr({
+        "src": monsters[(questionnow % 5)].url,
+    });
+
 }
 
 function summaryGame() {
@@ -96,6 +100,7 @@ function summaryGame() {
     }
 
 
+
 }
 
 
@@ -105,7 +110,6 @@ function changeStatetime() {
 
 function getquestion() {
     changeQuestion();
-    //scorenow++;
     updateScore()
 }
 
@@ -123,11 +127,6 @@ function changeQuestion() {
     qindex = x;
     qused[x] = true;
 
-    $("#monspic").attr({
-        "src": monsters[questionnow % 5].url,
-    });
-
-
 }
 
 function updateScore() {
@@ -141,6 +140,11 @@ function updateQuestion() {
         questionnow++;
         //document.getElementById("questionshow").textContent = "Question: " + questionnow;
         $("#questionshow").text("Question: " + questionnow);
+
+        // console.log("now " + (questionnow % 5));
+        $("#monspic").attr({
+            "src": monsters[(questionnow % 5)].url,
+        });
     } else {
         changeStatetime();
         summaryGame();
@@ -172,6 +176,8 @@ function setQuestion(item) {
         "src": item.choicepic[3],
     });
 
+
+
 }
 
 function setQuestionvalue(num) {
@@ -192,9 +198,10 @@ function selectAnswer(num) {
             console.log(num + " incorrect!");
         }
 
+        updateQuestion();
         changeQuestion();
         updateScore();
-        updateQuestion();
+
     }
 }
 

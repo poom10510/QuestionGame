@@ -83,13 +83,13 @@
     </div>
 
     <script>
+        $.getJSON('./database/Monsters.json', (mdata) => {
+            setMonsterlist(mdata);
+        });
         $.getJSON('./database/Questions.json', (data) => {
-            $.getJSON('./database/Monsters.json', (mdata) => {
-                setMonsterlist(mdata);
-                game(data)
-                setGamestate(1);
-                $("#timer").text("Time: " + (timeleft / 10).toFixed(1));
-            });
+            game(data)
+            setGamestate(1);
+            $("#timer").text("Time: " + (timeleft / 10).toFixed(1));
         });
 
         $(document).ready(function() {

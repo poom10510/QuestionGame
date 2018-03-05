@@ -61,14 +61,16 @@ p {
 }
 
 .battlewall {
-    background: url('/src/cherry-blossom-clipart-wallpaper-12.jpg');
+    background: url('https://poom10510.github.io/QuestionGame/src/cherry-blossom-clipart-wallpaper-12.jpg');
+    /* background: url(http://moziru.com/images/cherry-blossom-clipart-wallpaper-12.jpg); */
     height: 300px;
     border: 3px solid palevioletred;
     margin-top: 10px;
 }
 
 #battlefield {
-    background: transparent url('/src/japan-nature-wallpaper-sakura-wallpapers-p-46641844.jpg') center;
+    background: transparent url('https://poom10510.github.io/QuestionGame/src/japan-nature-wallpaper-sakura-wallpapers-p-46641844.jpg') center;
+    /* background: transparent url(https://wallpaperclicker.com/storage/wallpaper/japan-nature-wallpaper-sakura-wallpapers-p-46641844.jpg) center; */
     background-color: rgb(255, 0, 255);
 }
 

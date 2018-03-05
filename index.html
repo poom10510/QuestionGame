@@ -10,6 +10,14 @@
     <link href="gamestyle.css" rel="stylesheet" type="text/css" />
 
     <script>
+        $.getJSON('./database/Monsters.json', (mdata) => {
+            setMonsterlist(mdata);
+        });
+        $.getJSON('./database/Questions.json', (data) => {
+            game(data)
+            setGamestate(1);
+            $("#timer").text("Time: " + (timeleft / 10).toFixed(1));
+        });
     </script>
 </head>
 
@@ -83,15 +91,6 @@
     </div>
 
     <script>
-        $.getJSON('./database/Monsters.json', (mdata) => {
-            setMonsterlist(mdata);
-        });
-        $.getJSON('./database/Questions.json', (data) => {
-            game(data)
-            setGamestate(1);
-            $("#timer").text("Time: " + (timeleft / 10).toFixed(1));
-        });
-
         $(document).ready(function() {
             $("#s4").click(function() {
                 console.log("start");

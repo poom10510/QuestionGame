@@ -185,6 +185,10 @@ div.testanime {
     animation-iteration-count: infinite;
 }
 
+.flipimg:hover {
+    transform: scaleX(-1);
+}
+
 @keyframes mover1 {
     0% {
         background-color: red;

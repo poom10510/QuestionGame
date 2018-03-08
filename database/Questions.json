@@ -317,6 +317,34 @@
         "questionpic": "",
         "choicepic": ["", "", "", ""],
         "answer": 1
+    },
+    {
+        "no": 38,
+        "question": "How many year of 699 month ?",
+        "choice": ["50", "54", "58", "60"],
+        "questionpic": "",
+        "choicepic": ["", "", "", ""],
+        "answer": 3
+    },
+    {
+        "no": 39,
+        "question": "What color not in CYMK ?",
+        "choice": ["greenish-blue", "red", "yellow", "black"],
+        "questionpic": "",
+        "choicepic": ["", "", "", ""],
+        "answer": 2
+    },
+    {
+        "no": 40,
+        "question": "What country not near ?",
+        "choice": ["", "", "", ""],
+        "questionpic": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_Thailand.svg",
+        "choicepic": ["https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg",
+            "https://upload.wikimedia.org/wikipedia/commons/5/56/Flag_of_Laos.svg",
+            "https://upload.wikimedia.org/wikipedia/commons/6/66/Flag_of_Malaysia.svg",
+            "https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_Cambodia.svg"
+        ],
+        "answer": 1
     }
 
 
